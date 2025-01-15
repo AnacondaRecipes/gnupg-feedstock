@@ -1,0 +1,7 @@
+upload_channels:
+  - sfe1ed40
+
+channels:
+  - https://staging.continuum.io/prefect/fs/libassuan-feedstock/pr1/904e52b
+  - https://staging.continuum.io/prefect/fs/pinentry-feedstock/pr1/e420c58
+  - https://staging.continuum.io/prefect/fs/libgpg-error-feedstock/pr3/3a7b7fa

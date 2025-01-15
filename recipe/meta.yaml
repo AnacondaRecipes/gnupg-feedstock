@@ -1,24 +1,16 @@
 {% set name = "gnupg" %}
-{% set version = "2.3.3" %}
-{% set sha256 = "5789b86da6a1a6752efb38598f16a77af51170a8494039c3842b085032e8e937" %}
+{% set version = "2.4.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-{{ version }}.tar.bz2
-  sha256: {{ sha256 }}
+  url: https://www.gnupg.org/ftp/gcrypt/{{ name }}/{{ name }}-{{ version }}.tar.bz2
+  sha256: 7b24706e4da7e0e3b06ca068231027401f238102c41c909631349dcc3b85eb46
 
 build:
   number: 0
-  script:
-    - export CPPFLAGS="-DIN_EXCL_UNLINK=0x04000000 $CPPFLAGS"  # [linux]
-    - export LDFLAGS="-lrt $LDFLAGS"                           # [linux]
-    - ./configure --prefix="$PREFIX"
-    - make
-    - make install
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('gnupg', max_pin='x.x') }}
@@ -26,23 +18,18 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - make
+    - pkg-config
   host:
-    - bzip2
-    - sqlite
-    - libgcrypt
+    - npth
     - libgpg-error
+    - libgcrypt
     - libksba
     - libassuan
-    - ntbtls
-    - npth
-    - readline
-    - libiconv
-  run:
-    - bzip2
-    - readline
-    - libiconv
+    - pinentry
     - sqlite
+    - ntbtls
+    - libiconv
 
 test:
   commands:
@@ -50,10 +37,14 @@ test:
 
 about:
   home: https://www.gnupg.org
-  summary: The New GNU Privacy Guard
-  license: LGPL-3
-  license_family: GPL
-  license_file: COPYING
+  doc_url: https://www.gnupg.org
+  dev_url: https://github.com/gpg/gnupg
+  summary: The GNU Privacy Guard
+  license: GPL-3.0-or-later
+  license_family: GPL3
+  license_file:
+    - AUTHORS 
+    - COPYING
   description: |
     GnuPG is a complete and free implementation of the OpenPGP standard as defined
     by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data
