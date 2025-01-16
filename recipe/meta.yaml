@@ -11,7 +11,8 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  # At minimum, libksba isn't available on s390x
+  skip: true  # [win or s390x]
   run_exports:
     - {{ pin_subpackage('gnupg', max_pin='x.x') }}
 
@@ -30,6 +31,8 @@ requirements:
     - sqlite
     - ntbtls
     - libiconv
+    - readline
+    - zlib
 
 test:
   commands:
