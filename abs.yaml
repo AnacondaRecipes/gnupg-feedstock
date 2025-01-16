@@ -2,9 +2,9 @@ upload_channels:
   - sfe1ed40
 
 channels:
-  - https://staging.continuum.io/prefect/fs/npth-feedstock/pr1/e0bdae0
+  - https://staging.continuum.io/prefect/fs/npth-feedstock/pr1/d1f5f62
   - https://staging.continuum.io/prefect/fs/libassuan-feedstock/pr1/79b9a8e
   - https://staging.continuum.io/prefect/fs/pinentry-feedstock/pr1/d98279a
-  - https://staging.continuum.io/prefect/fs/libgpg-error-feedstock/pr3/3a7b7fa
-  - https://staging.continuum.io/prefect/fs/libksba-feedstock/pr1/5ff17d0
-  - https://staging.continuum.io/prefect/fs/ntbtls-feedstock/pr1/d152552
+  - https://staging.continuum.io/prefect/fs/libgpg-error-feedstock/pr3/9837494
+  - https://staging.continuum.io/prefect/fs/libksba-feedstock/pr1/d20a179
+  - https://staging.continuum.io/prefect/fs/ntbtls-feedstock/pr1/66fe942
