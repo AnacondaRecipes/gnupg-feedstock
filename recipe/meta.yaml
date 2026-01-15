@@ -29,8 +29,8 @@ requirements:
     - libassuan {{ libassuan }}
     - pinentry 1.3.1
     - sqlite {{ sqlite }}
-    - ntbtls {{ ntbtls}}
-    - libiconv {{ libiconv}}
+    - ntbtls {{ ntbtls }}
+    - libiconv {{ libiconv }}
     - readline {{ readline }}
     - zlib {{ zlib }}
 
